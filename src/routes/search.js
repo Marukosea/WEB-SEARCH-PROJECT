@@ -1,10 +1,15 @@
 const express = require('express');
-const path = require('path');
 const { Storage } = require('@google-cloud/storage');
 
 const router = express.Router();
 const bucketName = 'web-search-project-bucket'; // Nama bucket Anda
-const keyFilename = path.join(__dirname, '../../linen-radio-460022-e2-2bebbe3fc304.json'); // Path ke file JSON Anda
+const keyFilename = process.env.GOOGLE_APPLICATION_CREDENTIALS; // Path ke file JSON dari variabel lingkungan
+
+if (!keyFilename) {
+    console.error('Error: GOOGLE_APPLICATION_CREDENTIALS tidak ditemukan di file .env');
+    process.exit(1); // Keluar jika variabel lingkungan tidak ditemukan
+}
+
 const storage = new Storage({ keyFilename });
 const bucket = storage.bucket(bucketName);
 
