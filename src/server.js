@@ -19,6 +19,15 @@ if (!keyFilename) {
     process.exit(1); // Keluar jika variabel lingkungan tidak ditemukan
 }
 
+// Tambahan: Baca file JSON untuk memastikan file dapat diakses
+try {
+    const config = JSON.parse(fs.readFileSync(keyFilename, 'utf8'));
+    console.log('Config file loaded successfully:', config.project_id);
+} catch (err) {
+    console.error('Error reading config file:', err.message);
+    process.exit(1); // Keluar jika file tidak dapat dibaca
+}
+
 const storage = new Storage({ keyFilename });
 const bucket = storage.bucket(bucketName);
 
