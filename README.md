@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Web Search Project
 
 This project is a simple web application that allows users to search for files (images and PDFs) based on keywords. The front page features a search bar where users can input their search terms, and the application will display the relevant files that match the search criteria.
@@ -43,3 +44,6 @@ This project is a simple web application that allows users to search for files (
 
 Feel free to submit issues or pull requests if you have suggestions or improvements for the project.
 # WEB-SEARCH
+=======
+# Bela-project
+>>>>>>> a80e60b3f86d5b794ab35433e4f759c1a70bd5be
