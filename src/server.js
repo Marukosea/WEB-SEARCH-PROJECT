@@ -36,7 +36,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 // Middleware untuk logging
 app.use(morgan('combined')); // Logging request ke terminal
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Endpoint upload ke GCS
 app.post('/upload', upload.single('file'), async (req, res) => {
