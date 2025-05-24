@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Web Search Project
 
 This project is a simple web application that allows users to search for files (images and PDFs) based on keywords. The front page features a search bar where users can input their search terms, and the application will display the relevant files that match the search criteria.
@@ -48,3 +49,6 @@ Feel free to submit issues or pull requests if you have suggestions or improveme
 =======
 # web-search-project
 >>>>>>> d813ac618552b025449b6a7e62f0ba7825c65c1e
+=======
+# web-search-project
+>>>>>>> 07af865aec6aefaf298c022ad9d18b51da3802bc
