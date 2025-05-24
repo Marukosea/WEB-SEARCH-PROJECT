@@ -11,23 +11,14 @@ const PORT = process.env.PORT || 3000;
 // Ganti dengan nama bucket kamu
 const bucketName = 'web-search-project-bucket';
 
-// Gunakan buffer dari variabel lingkungan atau file JSON
+// Gunakan buffer dari variabel lingkungan
 let credentials;
 if (process.env.GOOGLE_APPLICATION_CREDENTIALS_CONTENT) {
-    // Jika kredensial disediakan sebagai string JSON di variabel lingkungan
+    // Membaca kredensial dari variabel lingkungan sebagai string JSON
     credentials = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_CONTENT);
-} else if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-    // Jika kredensial disediakan sebagai path ke file JSON
-    const credentialsPath = path.resolve(process.env.GOOGLE_APPLICATION_CREDENTIALS);
-    try {
-        credentials = require(credentialsPath);
-    } catch (err) {
-        console.error(`Error: Tidak dapat membaca file kredensial di ${credentialsPath}`);
-        process.exit(1);
-    }
 } else {
-    console.error('Error: Kredensial Google Cloud tidak ditemukan.');
-    process.exit(1);
+    console.error('Error: Kredensial Google Cloud tidak ditemukan di variabel lingkungan.');
+    process.exit(1); // Keluar jika variabel lingkungan tidak ditemukan
 }
 
 const storage = new Storage({ credentials });
